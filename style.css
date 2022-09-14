@@ -71,9 +71,10 @@ body {
   }
 
 #box img{
+  position:relative;
   opacity: 85%;
-  width: 150px;
-  height: 150px;
+  width: 40%;
+  height: 80%;
   border-radius: 50%;
   border: 3px solid rgb(48, 42, 54);
 }
@@ -99,6 +100,8 @@ body {
   padding:0;
 } 
 #vanta{
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
