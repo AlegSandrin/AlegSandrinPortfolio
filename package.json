@@ -1,7 +1,7 @@
 {
   "name": "alegsandrin",
   "version": "0.1.0",
-  "homepage": "https://AlegSandrin.github.io/AlegSandrin.github.io",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.11",
