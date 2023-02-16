@@ -3,7 +3,6 @@ import './App.css'
 import * as THREE from 'vanta/vendor/three.r134.min'
 import NET from 'vanta/dist/vanta.net.min'
 import profile from "./img/profile.png";
-
 class App extends React.Component {
   constructor() {
     super()
