@@ -5,10 +5,10 @@ function Welcome() {
 <div className="Welcome">
 
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700">
-            <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800">
+            <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
 
-                <div className="flex-grow">
-                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:mb-4 rounded-full"></img>
+                <div className="flex-grow z-20">
+                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:mb-4 rounded-full "></img>
                     <h1 className="text-blue-200 text-center text-2xl sm:text-5xl mb-2">
                         Seja bem-vindo(a)
                     </h1>
@@ -19,7 +19,7 @@ function Welcome() {
             </div>
 
 
-        <div className='lg:min-h-screen lg:flex lg:items-center p-6 lg:p-12 xl:p-18'>
+        <div className='lg:min-h-screen lg:flex lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
             <div className="flex-grow bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
                 <h1 className='text-left text-blue-100 text-4xl sm:text-4xl'>Um pouco sobre mim</h1>
                 <p className='text-left text-white mt-5 indent-4'>
@@ -31,19 +31,19 @@ function Welcome() {
                 </p>
                 <h2 className='text-left text-blue-100 text-2xl sm:text-2xl mt-5'>Conhecimentos:</h2>
                 <div className='flex flex-row gap-4 mt-2'>
-                    <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" className='h-full' alt="ionic" width="40" height="40"/> </a> 
-                    <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/></a>
-                    <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> 
-                    <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
-                    <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://styles.redditmedia.com/t5_2qm6k/styles/communityIcon_dhjr6guc03x51.png" className="rounded-full" alt="mysql" width="40" height="40"/> </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> 
-                    <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a>
+                    <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40" className='h-full icon'/></a>
+                    <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40" className='h-full icon'/> </a>
+                    <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://styles.redditmedia.com/t5_2qm6k/styles/communityIcon_dhjr6guc03x51.png" className="rounded-full icon" alt="mysql" width="40" height="40" /> </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40" className='h-full icon'/> </a>
                 </div>
                 <h2 className='text-left text-blue-100 text-2xl sm:text-2xl mt-3'>Aprendendo:</h2>
                 <div className='flex flex-row gap-4 mt-2'>
-                    <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> 
-                    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a>  
-                    <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" alt="nodejs" width="40" height="40"/> </a> 
+                    <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40" className='h-full icon'/> </a>  
+                    <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" alt="nodejs" width="40" height="40" className='h-full icon'/> </a> 
                 </div>
 
             </div>
