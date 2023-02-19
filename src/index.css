@@ -4,5 +4,30 @@
     @apply transition ease-in-out delay-100 -translate-y-1 scale-110 brightness-125 duration-300
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.projetos::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.projetos {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.label{
+  @apply flex text-white md:text-3xl text-xl
+}
+
+.input{
+  @apply flex w-full my-4 py-3 px-2 rounded-md shadow-2xl bg-gray-600 opacity-80 text-white
+}
+
+.inputM{
+  @apply flex w-full h-[75%] max-h-[75%] my-4 py-3 px-2 rounded-md shadow-2xl bg-gray-600 opacity-80 text-white resize-none
+}
+
+.button{
+  @apply flex bg-purple-700 text-white font-bold transition delay-100 duration-150 hover:bg-purple-400 hover:text-black text-[1.2rem] text-center p-2 px-6 float-right cursor-pointer rounded-full shadow-2xl
+}
 @tailwind components;
 @tailwind utilities;

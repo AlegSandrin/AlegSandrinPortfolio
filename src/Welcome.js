@@ -4,11 +4,26 @@ function Welcome() {
     return (
 <div className="Welcome">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700">
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700" id='sobremim'>
             <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
 
                 <div className="flex-grow z-20">
-                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:mb-4 rounded-full "></img>
+
+                    <div className='flex text-white bg-gray-800 -translate-y-10 rounded-full shadow-xl w-[300px] mx-auto p-2'>
+                
+                    <a className='ml-auto font-bold' href='#sobremim'>Sobre mim</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                    <a href='#projetos'>Projetos</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                    <a className='mr-auto' href='#contato'>Contato</a>
+
+                    </div>
+
+                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:mb-4 rounded-full"></img>
                     <h1 className="text-blue-200 text-center text-2xl sm:text-5xl mb-2">
                         Seja bem-vindo(a)
                     </h1>
@@ -16,6 +31,8 @@ function Welcome() {
                         Portfólio de Alexsandro Urbano
                     </p>
                 </div>
+
+
             </div>
 
 
