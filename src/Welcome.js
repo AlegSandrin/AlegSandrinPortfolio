@@ -15,7 +15,7 @@ function Welcome() {
   clearInterval(interval);
   
   interval = setInterval(() => {
-    event.target.innerHTML = event.target.innerHTML
+    event.target.innerText = event.target.innerText
       .split("")
       .map((letter, index) => {
         if(index < iteration) {
