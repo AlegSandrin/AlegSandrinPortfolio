@@ -1,25 +1,61 @@
 import profile from './img/profile.jpg'
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Welcome() {
+
+    window.onload = () => {
+
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    let interval = null;
+
+    document.querySelector("h5").onmouseover = event => {  
+  let iteration = 0;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerHTML = event.target.innerHTML
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 30);
+}
+}
+  
     return (
+         
 <div className="Welcome">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700" id='sobremim'>
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700" id='sobremim' name='sobremim'>
             <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
 
                 <div className="flex-grow z-20">
-
                     <div className='flex text-white bg-gray-800 -translate-y-10 rounded-full shadow-xl w-[300px] mx-auto p-2'>
-                
-                    <a className='ml-auto font-bold' href='#sobremim'>Sobre mim</a>
+                    
+                    <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
-                    <a href='#projetos'>Projetos</a>
+
+                    <Link activeClass="active" className="cursor-pointer" to="projetos " spy={true} smooth={true} duration={500}>Projetos</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
-                    <a className='mr-auto' href='#contato'>Contato</a>
+                    
+                    <Link activeClass="active" className="mr-auto cursor-pointer" to="Contato" spy={true} smooth={true} duration={500}>Contato</Link>
 
                     </div>
 
@@ -36,8 +72,14 @@ function Welcome() {
             </div>
 
 
-        <div className='lg:min-h-screen lg:flex lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
-            <div className="flex-grow bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
+        <div className='lg:min-h-screen lg:flex lg:flex-col lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
+
+            
+
+            <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
+
+                <h5 className='name my-2 text-center text-white xl:text-[5rem] lg:text-[3.7rem] sm:text-[5rem] text-[3rem] transition duration-150 hover:text-green-500' data-value="ALEXSANDRO URBANO">ALEGSANDRIN      </h5>
+
                 <h1 className='text-left text-blue-100 text-4xl sm:text-4xl'>Um pouco sobre mim</h1>
                 <p className='text-left text-white mt-5 indent-4'>
                     Meu nome é Alexsandro Urbano, tenho 18 anos e sou estudante na instituição ETEC Albert Einstein, 

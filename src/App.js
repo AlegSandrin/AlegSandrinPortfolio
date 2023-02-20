@@ -11,7 +11,7 @@ import Birds from "./vanta/Birds"
 function App(){
   return (
 
-    <div className="flex flex-col h-[325vh] lg:h-[300vh]">
+    <div className="flex flex-col">
       <Net/>
         <Welcome/>
       <Globe/>
@@ -19,7 +19,7 @@ function App(){
       <Birds/>
         <Contato/>
     </div>
-    
+
 
   );
 }

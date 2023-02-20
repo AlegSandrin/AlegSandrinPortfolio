@@ -1,5 +1,6 @@
 import projetos from "./ListaProjetos"
 
+
 function ProjetosListar(){
 
     
@@ -41,12 +42,12 @@ function ProjetosListar(){
 function Projetos(){
 
     return(
-        <div className="Projetos h-full bg-gray-700 p-6 lg:p-8 lg:px-16" id="projetos">
+        <div className="h-full bg-gray-700 p-6 lg:p-8 lg:px-16 scroll-smooth" >
 
             <div className="h-full">
-                <h1 className="text-indigo-300 text-left text-4xl sm:text-5xl m-6"> Projetos </h1>
+                <h1 className="projetos text-indigo-300 text-left text-4xl sm:text-5xl m-6"> Projetos </h1>
 
-                <div className="projetos h-[90vh] bg-gray-800 rounded-3xl shadow-2xl opacity-90 p-8 z-20 overflow-auto overflow-x-hidden">
+                <div className="ListaProjetos h-[90vh] bg-gray-800 rounded-3xl shadow-2xl opacity-90 p-8 z-20 overflow-auto overflow-x-hidden">
                     <div className='grid grid-cols-2 max-lg:grid-cols-1 gap-8'>
                         {ProjetosListar()}
                     </div>
