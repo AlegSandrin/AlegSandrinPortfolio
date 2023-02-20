@@ -4,7 +4,8 @@ import emailjs from '@emailjs/browser'
 
 const Result = () => {
     return(
-        <div></div>
+        <div className='flex absolute right-[60px] translate-y-[85px] sm:translate-y-[70px] md:translate-y-0 md:right-auto col-span-2 bg-lime-700 text-white p-2 rounded-md'>Mensagem enviada <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </div>
     )
 }
 
@@ -26,6 +27,9 @@ function Contato(){
             e.target.reset();
             showResult(true)
         }
+        setTimeout(() => {
+            showResult(false)
+        }, 5000)
 
 return(
 
@@ -53,6 +57,9 @@ return(
         <label className='label'>Mensagem</label>
         <textarea className='inputM' name="message" placeholder='Diga-me' required/>
         <input className='button col-span-2' type="submit" value="Enviar" />
+        
+        <div className='result'> {result ? <Result/> : null} </div> 
+
         </div>
         <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto'>
             <a className='icon ' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
@@ -66,9 +73,7 @@ return(
 
     </div>
 
-    <div className='confirm'> {result ? <Result/> : null} </div> 
-
-    </div>
+</div>
 
 )
 
