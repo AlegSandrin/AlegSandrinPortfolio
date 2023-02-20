@@ -1,23 +1,23 @@
+// Paginas
 import Welcome from "./Welcome"
 import Projetos from "./Projetos"
 import Contato from "./Contato"
-import Birds from "./vanta/Birds"
 
+// Vanta - Fundo animado
 import Net from "./vanta/Net"
 import Globe from "./vanta/Globe"
-
+import Birds from "./vanta/Birds"
 
 function App(){
   return (
 
     <div className="flex flex-col h-[325vh] lg:h-[300vh]">
       <Net/>
-      <Welcome/>
+        <Welcome/>
       <Globe/>
-      <Projetos/>
+        <Projetos/>
       <Birds/>
-      <Contato/>
-      
+        <Contato/>
     </div>
     
 

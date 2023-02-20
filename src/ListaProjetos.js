@@ -1,6 +1,8 @@
 import HC from "./img/projetos/healthy-care.png"
 import ePF from "./img/projetos/eventoPF.png"
 import eJS from "./img/projetos/exercicios-js.png"
+import STA from "./img/projetos/star-wars-api.png"
+import ICA from "./img/projetos/ionic-cep-api.png"
 
 var ionic = "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg"
 var angular =  "https://angular.io/assets/images/logos/angular/angular.svg"
@@ -33,6 +35,20 @@ const projetos = [
     link: "https://exercicios-javascript-psi.vercel.app/",
     linguagens: [js],
     },
+    {
+    preview: STA,
+    titulo: "Star Wars API App",
+    descricao: "App simples para praticar request de api JSON com Ionic Framework",
+    link: "https://star-wars-api-vert.vercel.app/",
+    linguagens: [ionic,angular,ts],
+    },
+    {
+    preview: ICA,
+    titulo: "Ionic CEP API",
+    descricao: "App que faz request a uma API atraves de um CEP fornecido pelo usuário e é retornado dados sobre esse local. Projeto desenvolvido para uma tarefa de Programação Mobile.",
+    link: "https://ionic-cep-search.vercel.app/home",
+    linguagens: [ionic,angular,ts],
+    }
     // {
     // preview: ,
     // titulo: "",

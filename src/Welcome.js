@@ -1,4 +1,4 @@
-import profile from './img/profile.png'
+import profile from './img/profile.jpg'
 
 function Welcome() {
     return (
@@ -23,7 +23,7 @@ function Welcome() {
 
                     </div>
 
-                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:mb-4 rounded-full"></img>
+                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full"></img>
                     <h1 className="text-blue-200 text-center text-2xl sm:text-5xl mb-2">
                         Seja bem-vindo(a)
                     </h1>
