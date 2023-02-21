@@ -20,7 +20,9 @@ function Result(condition) {
 }
 }
 
-
+    function onloadCallback(){
+        console.log("Recaptcha loaded")
+    }
 
 function Contato(){
 
@@ -84,6 +86,7 @@ return(
         sitekey='6LdP-p8kAAAAAMBJp2hawp3jfjE5nfeVZQ8f7YB8'
         render='explicit'
         verifyCallback={verifyCallback}
+        onloadCallback={onloadCallback}
         theme="dark"
         hl='pt-PT'
         size='compact'
