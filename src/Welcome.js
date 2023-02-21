@@ -2,7 +2,7 @@ import profile from './img/profile.jpg'
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function Welcome() {
-    
+
     return (
          
 <div className="Welcome">
@@ -46,7 +46,7 @@ function Welcome() {
 
             <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
 
-                <h5 className='name my-2 text-center text-white xl:text-[5rem] lg:text-[3.7rem] sm:text-[5rem] text-[3rem] transition duration-150 hover:text-green-500' data-value="ALEXSANDRO URBANO">ALEGSANDRIN      </h5>
+                <h5 className='name my-2 text-center text-white xl:text-[5rem] lg:text-[3.7rem] sm:text-[5rem] text-[3rem] transition duration-150 hover:text-green-500' id='titulo' data-value="ALEXSANDRO URBANO">ALEGSANDRIN      </h5>
 
                 <h1 className='text-left text-blue-100 text-4xl sm:text-4xl'>Um pouco sobre mim</h1>
                 <p className='text-left text-white mt-5 indent-4'>
