@@ -3,8 +3,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 function Welcome() {
 
-    window.onload = () => {
-
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     let interval = null;
@@ -33,7 +31,7 @@ function Welcome() {
     iteration += 1 / 3;
   }, 50 );
 }
-}
+
   
     return (
          
