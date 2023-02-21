@@ -43,7 +43,7 @@ function Welcome() {
             <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
 
                 <div className="flex-grow z-20">
-                    <div className='flex text-white bg-gray-800 -translate-y-10 rounded-full shadow-xl w-[300px] mx-auto p-2'>
+                    <div className='flex text-white bg-gray-800 -translate-y-5 lg:-translate-y-10 rounded-full shadow-xl sm:text-lg my-auto text-xs sm:w-[300px] w-[220px] mx-auto p-2'>
                     
                     <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

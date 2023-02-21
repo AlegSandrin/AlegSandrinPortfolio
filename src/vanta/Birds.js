@@ -38,7 +38,7 @@ render(){
   
   return (
     
-    <div className="h-full w-full absolute z-0 opacity-40 translate-y-[200vh]" ref={this.vantaRef}></div>
+    <div className=" absolute z-0 opacity-40 translate-y-[200vh]" ref={this.vantaRef}></div>
     
   );
 }
