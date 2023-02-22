@@ -20,6 +20,7 @@ const projetos = [
     descricao: "App com objetivo de trazer ao usuário informações e dicas sobre sua própria saúde",
     link: "https://healthy-care-mu.vercel.app/home",
     linguagens: [ionic,angular,ts,firebase],
+    download: 'https://drive.google.com/file/d/1QyRgN9JKd4DOXMi204lK8FIoeO3bizp5/view?usp=sharing',
     },
     {
     preview: ePF,
@@ -55,6 +56,7 @@ const projetos = [
     // descricao: "",
     // link: "",
     // linguagens: [],
+    // download: '',
     // }
 ]
 

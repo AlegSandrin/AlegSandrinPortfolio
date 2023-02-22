@@ -3,10 +3,20 @@ import projetos from "./ListaProjetos"
 
 function ProjetosListar(){
 
-    
     const lista = []
     const len = projetos.length
     for(var i = 0; i < len; i++){ 
+
+        function GeraDownload(){
+            if(projetos[i].download)
+                return(
+                    <a href={projetos[i].download} className="flex m-2 sm:mt-auto mt-8 icon text-indigo-100 hover:text-indigo-800 w-[35px] h-[35px]">
+                    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=""><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                    </a>
+                )
+            else return <div></div>
+
+        }
 
         function GeraLinguagens(){
         const linguagens = []
@@ -24,12 +34,15 @@ function ProjetosListar(){
                     <a href={projetos[i].link} className="flex flex-shrink-0 sm-max:flex-shrink-0 sm:flex-shrink-0 rounded-l-3xl">
                     <img src={projetos[i].preview} href={projetos[i].link} className="rounded-l-3xl lg:max-w-[300px] max-w-[130px]"/>
                     </a>
-                    <div className="m-2">
-                    <h1 className="text-indigo-400 text-xs sm:text-sm md:text-base lg:text-2xl xl:text-3xl tracking-tight">{projetos[i].titulo}</h1>
-                    <h1 className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tight "> 
+                    <div className="w-full grid grid-flow-row grid-cols-4 m-2 overflow-auto overflow-x-hidden ListaProjetos">
+                    <h1 className="text-indigo-400 text-xs sm:text-sm md:text-base lg:text-2xl xl:text-3xl tracking-tight row-span-1 col-span-4">{projetos[i].titulo}</h1>
+                    <h1 className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tight row-span-6 col-span-4"> 
                     {projetos[i].descricao}
                     </h1>
-                    <div className='flex flex-row gap-1 sm:gap-2 absolute bottom-0 m-2 mr-4 right-0'>
+
+                    {GeraDownload()}
+
+                    <div className='flex gap-1 sm:gap-2 m-2 place-content-end col-span-3'>
                         {GeraLinguagens()}
                     </div>
                     </div>
