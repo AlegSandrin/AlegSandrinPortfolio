@@ -62,13 +62,13 @@ function Contato(){
 
 return(
 
-<div className="Contato  bg-gray-700 p-6 lg:p-10" id="contato" name='contato'>
+<div className="Contato h-full w-full bg-gray-700 p-6 lg:p-10" id="contato" name='contato'>
 
     <div className='w-[100%] items-center text-center'>
     <h1 className='text-center text-purple-300 lg:text-6xl md:text-5xl text-4xl mx-auto'>Entre em contato comigo!</h1>
     <p className='text-center text-purple-100 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
     </div>
-    <div className=' bg-gray-800 h-[85%] w-[98%] lg:h-[600px] lg:w-[900px] mx-auto shadow-2xl opacity-95 p-8 z-20 rounded-3xl'>
+    <div className=' bg-gray-800 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-95 p-8 z-20 rounded-3xl'>
         
     <form className='w-full h-full flex flex-col lg:grid grid-cols-1 lg:grid-cols-2 gap-4 border-blue-500' onSubmit={sendEmail}>
 

@@ -43,12 +43,14 @@
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
     <script async>
-      async function letrinhas(){
-      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      
+async function letrinhas(){
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-document.getElementById("titulo").onmouseover = event => {  
+const titulo = document.getElementById("titulo").onmouseover = event => {  
 let iteration = 0;
 
 clearInterval(interval);
