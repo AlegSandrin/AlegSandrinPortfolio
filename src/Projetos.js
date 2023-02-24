@@ -55,7 +55,7 @@ function ProjetosListar(){
 function Projetos(){
 
     return(
-        <div className="h-full bg-gray-700 p-6 lg:p-8 lg:px-16 scroll-smooth" >
+        <div className="h-full z-20 p-6 lg:p-8 lg:px-16 scroll-smooth" >
 
             <div className="h-full">
                 <h1 className="projetos text-indigo-300 text-left text-4xl sm:text-5xl mb-2 m-6"> Projetos </h1>

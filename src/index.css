@@ -5,6 +5,7 @@
 
 html{
   font-family: 'Rubik', sans-serif;
+  @apply bg-gray-700;
 }
 
 .name{
@@ -23,6 +24,10 @@ html{
 .ListaProjetos {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+span{
+  @apply xl:text-[4.0rem] lg:text-[2.9rem] sm:text-[4.4rem] text-[2.0rem] my-auto
 }
 
 .label{

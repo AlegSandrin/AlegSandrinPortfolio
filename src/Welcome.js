@@ -7,7 +7,7 @@ function Welcome() {
          
 <div className="Welcome">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-gray-700" id='sobremim' name='sobremim'>
+      <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='sobremim' name='sobremim'>
             <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
 
                 <div className="flex-grow z-20">
@@ -28,8 +28,8 @@ function Welcome() {
                     </div>
 
                     <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full"></img>
-                    <h1 className="text-blue-200 text-center text-2xl sm:text-5xl mb-2">
-                        Seja bem-vindo(a)
+                    <h1 className="text-blue-200 text-center text-xl sm:text-4xl mb-2" id="bemvindo" data-value="SEJA BEM-VINDO(A)!">
+                        SEJA BEM-VINDO(A)!
                     </h1>
                     <p className="text-center text-blue-300 sm-text-lg">
                         Portfólio de Alexsandro Urbano
@@ -46,9 +46,11 @@ function Welcome() {
 
             <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
 
-                <h5 className='name my-2 text-center text-white xl:text-[5rem] lg:text-[3.7rem] sm:text-[5rem] text-[3rem] transition duration-150 hover:text-green-500' id='titulo' data-value="ALEXSANDRO URBANO">ALEGSANDRIN      </h5>
+                <div className='name flex my-2 text-center text-white xl:text-[4.5rem] lg:text-[3.4rem] sm:text-[4.9rem] text-[2.5rem] transition duration-150 hover:text-green-500'>
+                <h5 id='titulo'></h5>
+                </div>
 
-                <h1 className='text-left text-blue-100 text-4xl sm:text-4xl'>Um pouco sobre mim</h1>
+                <h1 className='text-left text-blue-100 text-2xl sm:text-3xl md:text-4xl'>Um pouco sobre mim</h1>
                 <p className='text-left text-white mt-5 indent-4'>
                     Meu nome é Alexsandro Urbano, tenho 18 anos e sou estudante na instituição ETEC Albert Einstein, 
                     cursando o Ensino Médio com Habilitação Profissional de Técnico em Desenvolvimento de Sistemas.

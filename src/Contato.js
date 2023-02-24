@@ -62,7 +62,7 @@ function Contato(){
 
 return(
 
-<div className="Contato h-full w-full bg-gray-700 p-6 lg:p-10" id="contato" name='contato'>
+<div className="Contato h-full w-full z-20 p-6 lg:p-10" id="contato" name='contato'>
 
     <div className='w-[100%] items-center text-center'>
     <h1 className='text-center text-purple-300 lg:text-6xl md:text-5xl text-4xl mx-auto'>Entre em contato comigo!</h1>
