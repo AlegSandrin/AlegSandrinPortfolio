@@ -9,6 +9,7 @@ import Globe from "./vanta/Globe"
 import Birds from "./vanta/Birds"
 
 function App(){
+
   return (
 
     <div className="flex flex-col">
@@ -19,7 +20,6 @@ function App(){
       <Birds/>
         <Contato/>
     </div>
-
 
   );
 }

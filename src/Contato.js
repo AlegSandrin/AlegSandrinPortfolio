@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import Recaptcha from 'react-recaptcha';
-
 
 function Result(condition) {
 
@@ -59,6 +58,17 @@ function Contato(){
     }
 
 
+    const [message, setMessage] = useState('')
+    const [isDisabled, setIsDisabled] = useState(false)
+
+    useEffect(() => {
+        if(message.length > 1000){
+            setIsDisabled(true)
+        }
+        else{
+            setIsDisabled(false)
+        }
+    },[message])
 
 return(
 
@@ -95,20 +105,23 @@ return(
 
         <div className='lg:col-span-1 lg:row-span-6 '>
         <label className='label'>Mensagem</label>
-        <textarea className='inputM' name="message" placeholder='Diga-me' required/>
+        <textarea className='inputM' name="message" placeholder='Diga-me' value={message} onChange={(e) => setMessage(e.target.value)} required/>
+        <div className='flex items-center justify-between gap-2'>
+            <p className={`font-bold md:mb-0 mb-5 text-sm ${message.length > 1000 ? 'text-red-700' : 'text-white'}`}>{`${message.length}/1000`}</p>
+        </div>
 
-        <input className='button col-span-2' type="submit" value="Enviar"/>
+        <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar"/>
 
         <div className='result'> {result === "send" ? Result('send') : null} </div> 
         <div className='result'> {result === "captchaError" ? Result('captcha') : null} </div> 
 
         </div>
         <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto'>
-            <a className='icon ' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
-            <a className='icon ' href='https://www.linkedin.com/in/alexsandro-urbano-666292237/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384889.png' width='40px' height='40px'/> </a>
-            <a className='icon ' href='https://www.instagram.com/alexsandro.urbano9/'> <img src='https://cdn-icons-png.flaticon.com/512/408/408707.png' width='40px' height='40px'/> </a>
-            <a className='icon ' href='https://www.facebook.com/alexsandro.urbano.1/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384879.png' width='40px' height='40px'/></a>
-            <a className='icon '> <img src='https://cdn-icons-png.flaticon.com/512/2335/2335279.png' width='40px' height='40px'/><h5 className='hover:text-[1rem] text-[0.8rem] translate-x-[-25px] text-white hover:translate-x-[-35px]'>RedSpyBR#9490</h5></a>
+            <a className='icon' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
+            <a className='icon' href='https://www.linkedin.com/in/alexsandro-urbano-666292237/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384889.png' width='40px' height='40px'/> </a>
+            <a className='icon' href='https://www.instagram.com/alexsandro.urbano9/'> <img src='https://cdn-icons-png.flaticon.com/512/408/408707.png' width='40px' height='40px'/> </a>
+            <a className='icon' href='https://www.facebook.com/alexsandro.urbano.1/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384879.png' width='40px' height='40px'/></a>
+            <a className='icon'> <img src='https://cdn-icons-png.flaticon.com/512/2335/2335279.png' width='40px' height='40px'/><h5 className='hover:text-[1rem] text-[0.8rem] translate-x-[-25px] text-white hover:translate-x-[-35px]'>RedSpyBR#9490</h5></a>
         </div>
 
     </form>
