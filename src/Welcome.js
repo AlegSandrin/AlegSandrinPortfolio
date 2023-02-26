@@ -3,14 +3,24 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 function Welcome() {
 
+    function mobile () {
+        var maxWidth = 1024;
+        if(window.innerWidth < maxWidth){
+            return true
+        }
+        else{
+            return false
+        }
+      }
+
     return (
          
 <div className="Welcome">
 
       <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='sobremim' name='sobremim'>
-            <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20">
+            <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-right'}`} data-aos-delay='400'>
 
-                <div className="flex-grow z-20">
+                <div className="flex-grow z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-up'}`} data-aos-delay="600" data-aos-anchor-placement="top-center">
                     <div className='flex text-white bg-gray-800 -translate-y-5 lg:-translate-y-10 rounded-full shadow-xl sm:text-lg my-auto text-xs sm:w-[300px] w-[220px] mx-auto p-2'>
                     
                     <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
@@ -27,7 +37,7 @@ function Welcome() {
 
                     </div>
 
-                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full"></img>
+                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full" data-aos="flip-right" data-aos-delay="800"></img>
                     <h1 className="text-blue-200 text-center text-xl sm:text-4xl mb-2" id="bemvindo" data-value="SEJA BEM-VINDO(A)!">
                         SEJA BEM-VINDO(A)!
                     </h1>
@@ -42,9 +52,7 @@ function Welcome() {
 
         <div className='lg:min-h-screen lg:flex lg:flex-col lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
 
-            
-
-            <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4">
+            <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4" data-aos={`${mobile() ? 'fade-up' : 'fade-left'}`} data-aos-delay='1000'>
 
                 <div className='name flex my-2 text-center text-white xl:text-[4.5rem] lg:text-[3.4rem] sm:text-[4.9rem] text-[2.5rem] transition duration-150 hover:text-green-500'>
                 <h5 id='titulo'></h5>

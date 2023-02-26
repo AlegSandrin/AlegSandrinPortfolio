@@ -34,7 +34,7 @@ render(){
   
   return (
     
-    <div className="h-full w-full absolute z-20 opacity-40" ref={this.vantaRef}></div>
+    <div className="h-full w-full absolute z-20 opacity-40" ref={this.vantaRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
     
   );
 }

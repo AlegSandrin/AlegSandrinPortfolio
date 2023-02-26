@@ -72,13 +72,13 @@ function Contato(){
 
 return(
 
-<div className="Contato h-full w-full z-20 p-6 lg:p-10" id="contato" name='contato'>
+<div className="Contato h-full w-full p-6 lg:p-10" id="contato" name='contato'>
 
-    <div className='w-[100%] items-center text-center'>
-    <h1 className='text-center text-purple-300 lg:text-6xl md:text-5xl text-4xl mx-auto'>Entre em contato comigo!</h1>
-    <p className='text-center text-purple-100 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
+    <div className='items-center text-center'>
+    <h1 className='text-center text-purple-300 lg:text-6xl md:text-5xl text-4xl mx-auto' data-aos='fade-down' data-aos-delay='600'>Entre em contato comigo!</h1>
+    <p className='text-center text-purple-100 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto' data-aos='fade-up' data-aos-delay='800'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
     </div>
-    <div className=' bg-gray-800 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-95 p-8 z-20 rounded-3xl'>
+    <div className='bg-gray-800 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-95 p-8 z-20 rounded-3xl' data-aos='fade-up' data-aos-delay='900'>
         
     <form className='w-full h-full flex flex-col lg:grid grid-cols-1 lg:grid-cols-2 gap-4 border-blue-500' onSubmit={sendEmail}>
 
@@ -92,6 +92,7 @@ return(
         <label className='label'>Assunto</label>
         <input className='input' type='text' name="subject" placeholder='Assunto da mensagem' required/>
 
+        <div data-aos='flip-down' data-aos-delay='1200'>
         <Recaptcha
         sitekey='6LdP-p8kAAAAAMBJp2hawp3jfjE5nfeVZQ8f7YB8'
         render='explicit'
@@ -103,6 +104,8 @@ return(
         />
         </div>
 
+        </div>
+
         <div className='lg:col-span-1 lg:row-span-6 '>
         <label className='label'>Mensagem</label>
         <textarea className='inputM' name="message" placeholder='Diga-me' value={message} onChange={(e) => setMessage(e.target.value)} required/>
@@ -110,13 +113,13 @@ return(
             <p className={`font-bold md:mb-0 mb-5 text-sm ${message.length > 1000 ? 'text-red-700' : 'text-white'}`}>{`${message.length}/1000`}</p>
         </div>
 
-        <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar"/>
+        <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar" data-aos='zoom-in' data-aos-delay='1200'/>
 
         <div className='result'> {result === "send" ? Result('send') : null} </div> 
         <div className='result'> {result === "captchaError" ? Result('captcha') : null} </div> 
 
         </div>
-        <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto'>
+        <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto' data-aos='zoom-out' data-aos-delay='1200'>
             <a className='icon' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.linkedin.com/in/alexsandro-urbano-666292237/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384889.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.instagram.com/alexsandro.urbano9/'> <img src='https://cdn-icons-png.flaticon.com/512/408/408707.png' width='40px' height='40px'/> </a>

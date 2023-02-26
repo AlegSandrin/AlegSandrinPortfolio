@@ -33,7 +33,7 @@ render(){
   
   return (
     
-    <div className=" h-full absolute w-full z-0 opacity-60 translate-y-[100vh]" ref={this.vantaRef}></div>
+    <div className="absolute h-full w-full z-0 opacity-60" ref={this.vantaRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
     
   );
 }
