@@ -1,4 +1,4 @@
-import profile from './img/profile.jpg'
+import profile from '../assets/img/profile.jpg'
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function Welcome() {

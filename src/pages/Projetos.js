@@ -1,4 +1,4 @@
-import projetos from "./ListaProjetos"
+import projetos from "../components/ListaProjetos.js"
 
 function Projetos(){
 

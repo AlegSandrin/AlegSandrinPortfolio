@@ -1,12 +1,12 @@
 // Paginas
-import Welcome from "./Welcome"
-import Projetos from "./Projetos"
-import Contato from "./Contato"
+import Welcome from "./pages/Welcome"
+import Projetos from "./pages/Projetos"
+import Contato from "./pages/Contato"
 
 // Vanta - Fundo animado
-import Net from "./vanta/Net"
-import Globe from "./vanta/Globe"
-import Birds from "./vanta/Birds"
+import Net from "./components/vantajs/Net"
+import Globe from "./components/vantajs/Globe"
+import Birds from "./components/vantajs/Birds"
 
 // Animate on Scroll
 import Aos from "aos"
@@ -22,21 +22,20 @@ function App(){
   return (
 
     <div className="flex flex-col">
-      <div>
-      <Net/>
+        <div>
+        <Net/>
         <Welcome/>
         </div>
 
         <div>
-      <Globe/>
+        <Globe/>
         <Projetos/>
         </div>
 
         <div>
-      <Birds/>
+        <Birds/>
         <Contato/>
         </div>
-
     </div>
 
   );
