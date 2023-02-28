@@ -19,17 +19,17 @@ function Result(condition) {
 }
 }
 
-    function onloadCallback(){
-        console.log("Recaptcha loaded")
-    }
-
 function Contato(props){
 
-    let recaptchaInstance;
+    const [callback, setCallback] = useState(false)
+    function onloadCallback(){
+        console.log("Recaptcha loaded")
+        setCallback(true)
+    }
 
     const [darkMode, setDarkMode] = useState(true)
     const [theme, setTheme] = useState('dark')
-    const [seed, setSeed] = useState(1);
+    const [seed, setSeed] = useState();
     useEffect(() => {
         setDarkMode(props.darkMode)
         if(!props.darkMode){
@@ -40,11 +40,14 @@ function Contato(props){
         }
     },[props])
 
+    let recaptchaInstance;
     useEffect(() => {
+        if(callback){
         // recaptchaInstance.reset()
         setSeed(Math.random()); 
         // Forma que utilizei para alternar o tema do Recaptcha, pois o .reset() não estava funcionando
-    },[theme])
+    }
+    },[callback, theme])
 
     const [result, showResult] = useState('')
     const [state, setState] = useState(false)
@@ -76,7 +79,6 @@ function Contato(props){
         showResult('false')
     }, 5000)
     }
-
 
     const [message, setMessage] = useState('')
     const [isDisabled, setIsDisabled] = useState(false)
