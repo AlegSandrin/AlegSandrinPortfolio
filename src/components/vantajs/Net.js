@@ -7,14 +7,23 @@ export default function Net(props) {
 const [color, setColor] = useState(0xffffff)
 
 useEffect(() => {
+  if(!props.vantajs){
+    vantaEffect.destroy()
+  }
+  else{
+    setVantaEffect(null)
+  }
+},[props.vantajs])
+
+useEffect(() => {
   if(!props.darkMode){
     setColor(0x110d34)
   }
   else{
     setColor(0xffffff)
   }
-  setVantaEffect(null)
-},[props])
+  props.vantajs && setVantaEffect(null)
+},[props.darkMode])
 
 const [vantaEffect, setVantaEffect] = useState(null)
 const myRef = useRef(null)

@@ -21,27 +21,44 @@ function App(){
     offset:0,
   })
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(true)
+  const [vantajs, setVantajs] = useState(true)
 
   const switchModePages = (darkMode) => {
     setDarkMode(darkMode)
 }
 
+  const toggleVantajs = (vantajs) => {
+    setVantajs(vantajs)
+  }
+
   return (
 
     <div className="flex flex-col w-full h-full">
         <div>
-        <Net darkMode={darkMode}/>
-        <Welcome switchModePages={switchModePages}/>
+        <Net 
+        darkMode={darkMode}
+        vantajs={vantajs}
+        />
+        <Welcome 
+        switchModePages={switchModePages}
+        toggleVantajs={toggleVantajs}
+        />
         </div>
 
         <div>
-        <Globe darkMode={darkMode}/>
+        <Globe 
+        darkMode={darkMode}
+        vantajs={vantajs}
+        />
         <Projetos darkMode={darkMode}/>
         </div>
 
         <div >
-        <Birds darkMode={darkMode}/>
+        <Birds 
+        darkMode={darkMode}
+        vantajs={vantajs}
+        />
         <Contato darkMode={darkMode}/>
         </div>
     </div>

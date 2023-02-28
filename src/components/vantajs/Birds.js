@@ -8,6 +8,15 @@ const [color, setColor] = useState(0xffffff)
 const [color2, setColor2] = useState(0xa09fd2)
 
 useEffect(() => {
+  if(!props.vantajs){
+    vantaEffect.destroy()
+  }
+  else{
+    setVantaEffect(null)
+  }
+},[props.vantajs])
+
+useEffect(() => {
   if(!props.darkMode){
     setColor(0x0)
     setColor2(0x3d39af)
@@ -16,8 +25,8 @@ useEffect(() => {
     setColor(0xffffff)
     setColor2(0xa09fd2)
   }
-  setVantaEffect(null)
-},[props])
+  props.vantajs && setVantaEffect(null)
+},[props.darkMode])
 
 const [vantaEffect, setVantaEffect] = useState(null)
 const myRef = useRef(null)

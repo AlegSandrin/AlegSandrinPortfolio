@@ -1,15 +1,12 @@
 import profile from '../assets/img/profile.jpg'
 
-import Projetos from './Projetos';
-import Contato from './Contato'
-
 import { Link } from "react-scroll";
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 import { useEffect, useState } from 'react'
+import { AiOutlineCloseCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 
 
-
-function Welcome({switchModePages}) {
+function Welcome({switchModePages, toggleVantajs}) {
 
     function mobile () {
         var maxWidth = 1024;
@@ -29,25 +26,64 @@ function Welcome({switchModePages}) {
 
       function switchMode(){
         if(darkMode) {
-        return <BsFillSunFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-3xl lg:text-4xl xl:text-5xl text-yellow-300 saturate-50' data-aos="flip-left"/>} 
-        else {
-        return <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-3xl lg:text-4xl xl:text-5xl text-blue-900 saturate-50' data-aos="flip-left"/>}
-      }
+        return (
+        <div onClick={() => setDarkMode(!darkMode)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
+        Tema escuro
+        <BsFillMoonStarsFill className='switchButton ml-2 sm:text-2xl text-xs text-blue-500 saturate-50' data-aos="flip-left"/>
+        </div>
+        )
+        } else {
+        return(
+        <div onClick={() => setDarkMode(!darkMode)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
+        Tema claro
+        <BsFillSunFill className='switchButton ml-2 sm:text-2xl text-xs text-yellow-300 saturate-50' data-aos="flip-left"/>
+        </div>
+            )
+           }
+        }
+
+        const [vantajs, setVantajs] = useState(true)
+
+        useEffect(() => {
+            toggleVantajs(vantajs);
+        },[vantajs])
+
+        function toggleVantaButton(){
+        if(vantajs){
+         return(
+            <div onClick={() => setVantajs(!vantajs)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
+            Fundo 3D
+            <AiOutlineCheckCircle className='switchButton ml-2 sm:text-2xl text-xs text-green-600' data-aos="flip-left"/>
+            </div>
+         )
+        } else {
+         return(
+            <div onClick={() => setVantajs(!vantajs)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
+            Fundo 3D
+            <AiOutlineCloseCircle className='switchButton ml-2 sm:text-2xl text-xs text-red-600' data-aos="flip-left"/>
+            </div>
+            )
+           }
+        }
 
     return (
         
 
 <div className={`Welcome ${darkMode ? "dark" : ""} overflow-x-hidden`}>
 
-    <div className='transition-all ease-in-out duration-[2000ms] dark:bg-gray-700 bg-slate-200 '>
+    <div className='transition-colors ease-in-out duration-[2000ms] dark:bg-gray-700 bg-slate-200 '>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='sobremim' name='sobremim'>
             <div className="dark:bg-gray-900 bg-slate-600 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] dark:border-gray-800 border-slate-500 z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-right'}`} data-aos-delay='400'>
 
                 <div className="flex-grow" data-aos={`${mobile() ? 'fade-down' : 'fade-up'}`} data-aos-delay="600" data-aos-anchor-placement="top-center">
 
+                    <div className='grid grid-cols-2 gap-2 sm:w-[300px] w-[220px] mx-auto -translate-y-5'>
 
-                    <div className='flex dark:text-white dark:bg-gray-800 bg-slate-500 text-gray-900 -translate-y-5 lg:-translate-y-10 rounded-full shadow-xl sm:text-lg my-auto text-xs sm:w-[300px] w-[220px] mx-auto p-2'>
+                    <div className='col-span-1'>{switchMode()}</div>
+                    <div className='col-span-1'>{toggleVantaButton()}</div>
+
+                    <div className='flex place-items-center col-span-2 dark:text-white dark:bg-gray-800 bg-slate-500 text-gray-900 rounded-full shadow-xl sm:text-lg text-xs mx-auto sm:w-[300px] w-[220px] p-1 lg:p-2'>
                     
                     <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -61,10 +97,7 @@ function Welcome({switchModePages}) {
                     
                     <Link activeClass="active" className="mr-auto cursor-pointer" to="Contato" spy={true} smooth={true} duration={500}>Contato</Link>
 
-                    <div className='switchButton left-full translate-x-4 lg:translate-x-3 xl:translate-x-6 lg:-translate-y-1 xl:-translate-y-2 absolute'>
-                        {switchMode()} 
                     </div>
-
                     </div>
                     
                     <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full drop-shadow-2xl skew-y-6" data-aos="flip-right" data-aos-delay="1000"></img>
@@ -76,10 +109,7 @@ function Welcome({switchModePages}) {
                     </p>
                 </div>
                
-
-
             </div>
-
 
         <div className='lg:min-h-screen lg:flex lg:flex-col lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
 
