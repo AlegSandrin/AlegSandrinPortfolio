@@ -90,3 +90,7 @@ const projetos = [
 ]
 
 export default projetos;
+
+// OBS: não utilizei da API do Github para listar os projetos pois preferi listar
+// apenas os projetos que mais me interessavam mostrar, com algumas adições a mais
+// como imagem de preview e link para download de alguns deles

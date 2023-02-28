@@ -1,7 +1,15 @@
 import profile from '../assets/img/profile.jpg'
-import { Link, animateScroll as scroll } from "react-scroll";
 
-function Welcome() {
+import Projetos from './Projetos';
+import Contato from './Contato'
+
+import { Link } from "react-scroll";
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
+import { useEffect, useState } from 'react'
+
+
+
+function Welcome({switchModePages}) {
 
     function mobile () {
         var maxWidth = 1024;
@@ -13,15 +21,33 @@ function Welcome() {
         }
       }
 
+      const [darkMode, setDarkMode] = useState(true);
+
+      useEffect(() => {
+        switchModePages(darkMode);
+      },[darkMode])
+
+      function switchMode(){
+        if(darkMode) {
+        return <BsFillSunFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-3xl lg:text-4xl xl:text-5xl text-yellow-300 saturate-50' data-aos="flip-left"/>} 
+        else {
+        return <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-3xl lg:text-4xl xl:text-5xl text-blue-900 saturate-50' data-aos="flip-left"/>}
+      }
+
     return (
-         
-<div className="Welcome">
+        
+
+<div className={`Welcome ${darkMode ? "dark" : ""} overflow-x-hidden`}>
+
+    <div className='transition-all ease-in-out duration-[2000ms] dark:bg-gray-700 bg-slate-200 '>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='sobremim' name='sobremim'>
-            <div className="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] border-gray-800 z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-right'}`} data-aos-delay='400'>
+            <div className="dark:bg-gray-900 bg-slate-600 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] dark:border-gray-800 border-slate-500 z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-right'}`} data-aos-delay='400'>
 
-                <div className="flex-grow z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-up'}`} data-aos-delay="600" data-aos-anchor-placement="top-center">
-                    <div className='flex text-white bg-gray-800 -translate-y-5 lg:-translate-y-10 rounded-full shadow-xl sm:text-lg my-auto text-xs sm:w-[300px] w-[220px] mx-auto p-2'>
+                <div className="flex-grow" data-aos={`${mobile() ? 'fade-down' : 'fade-up'}`} data-aos-delay="600" data-aos-anchor-placement="top-center">
+
+
+                    <div className='flex dark:text-white dark:bg-gray-800 bg-slate-500 text-gray-900 -translate-y-5 lg:-translate-y-10 rounded-full shadow-xl sm:text-lg my-auto text-xs sm:w-[300px] w-[220px] mx-auto p-2'>
                     
                     <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -35,16 +61,21 @@ function Welcome() {
                     
                     <Link activeClass="active" className="mr-auto cursor-pointer" to="Contato" spy={true} smooth={true} duration={500}>Contato</Link>
 
+                    <div className='switchButton left-full translate-x-4 lg:translate-x-3 xl:translate-x-6 lg:-translate-y-1 xl:-translate-y-2 absolute'>
+                        {switchMode()} 
                     </div>
 
-                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full" data-aos="flip-right" data-aos-delay="800"></img>
-                    <h1 className="text-blue-200 text-center text-xl sm:text-4xl mb-2" id="bemvindo" data-value="SEJA BEM-VINDO(A)!">
+                    </div>
+                    
+                    <img src={profile} className="sm:flex-shrink-0 mx-auto h-24 sm:h-[200px] lg:h-[300px] lg:w-[300px] lg:mb-4 rounded-full drop-shadow-2xl skew-y-6" data-aos="flip-right" data-aos-delay="1000"></img>
+                    <h1 className="dark:text-blue-200 dark:saturate-100 saturate-[.7] lTitle text-center text-xl sm:text-4xl mb-2" id="bemvindo" data-value="SEJA BEM-VINDO(A)!">
                         SEJA BEM-VINDO(A)!
                     </h1>
-                    <p className="text-center text-blue-300 sm-text-lg">
+                    <p className="dark:text-blue-300 dark:saturate-100 saturate-[.7] lSubTitle text-center sm-text-lg">
                         Portfólio de Alexsandro Urbano
                     </p>
                 </div>
+               
 
 
             </div>
@@ -52,21 +83,21 @@ function Welcome() {
 
         <div className='lg:min-h-screen lg:flex lg:flex-col lg:items-center p-6 lg:p-12 xl:p-18 z-20 opacity-90'>
 
-            <div className="my-auto bg-gray-600 shadow-xl rounded-md p-8 pl-4 pr-4" data-aos={`${mobile() ? 'fade-up' : 'fade-left'}`} data-aos-delay='1000'>
+            <div className="my-auto dark:bg-gray-600 bg-slate-400 drop-shadow-xl rounded-md p-8 pl-4 pr-4" data-aos={`${mobile() ? 'fade-up' : 'fade-left'}`} data-aos-delay='1000'>
 
-                <div className='name flex my-2 text-center text-white xl:text-[4.5rem] lg:text-[3.4rem] sm:text-[4.9rem] text-[2.5rem] transition duration-150 hover:text-green-500'>
+                <div className='name flex my-2 text-center dark:text-white text-slate-800 xl:text-[4.5rem] lg:text-[3.4rem] sm:text-[4.9rem] text-[2.5rem] transition duration-150 dark:hover:text-green-500 hover:text-rose-700'>
                 <h5 id='titulo'></h5>
                 </div>
 
-                <h1 className='text-left text-blue-100 text-2xl sm:text-3xl md:text-4xl'>Um pouco sobre mim</h1>
-                <p className='text-left text-white mt-5 indent-4'>
+                <h1 className='text-left dark:text-blue-100 lSubTitle text-2xl sm:text-3xl md:text-4xl'>Um pouco sobre mim</h1>
+                <p className='text-left dark:text-white text-slate-900 mt-5 indent-4 text-lg'>
                     Meu nome é Alexsandro Urbano, tenho 18 anos e sou estudante na instituição ETEC Albert Einstein, 
                     cursando o Ensino Médio com Habilitação Profissional de Técnico em Desenvolvimento de Sistemas.
                     Sempre tive grande interesse pela área de Informática, e atualmente estou estudando
                     programação Web, Mobile e banco de dados, Front-end e Back-end, com o objetivo de ingressar no
                     ramo profissional desta área.
                 </p>
-                <h2 className='text-left text-blue-100 text-2xl sm:text-2xl mt-5'>Conhecimentos:</h2>
+                <h2 className='text-left dark:text-blue-100 lSubTitle text-2xl sm:text-2xl mt-5'>Conhecimentos:</h2>
                 <div className='flex flex-row gap-4 mt-2'>
                     <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic" width="40" height="40" className='h-full icon'/> </a> 
                     <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40" className='h-full icon'/></a>
@@ -76,7 +107,7 @@ function Welcome() {
                     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" className='h-full icon'/> </a> 
                     <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40" className='h-full icon'/> </a>
                 </div>
-                <h2 className='text-left text-blue-100 text-2xl sm:text-2xl mt-3'>Aprendendo:</h2>
+                <h2 className='text-left dark:text-blue-100 lSubTitle text-2xl sm:text-2xl mt-3'>Aprendendo:</h2>
                 <div className='flex flex-row gap-4 mt-2'>
                     <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" className='h-full icon'/> </a> 
                     <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40" className='h-full icon'/> </a>  
@@ -86,6 +117,7 @@ function Welcome() {
             </div>
         </div>
 
+    </div>
     </div>
 </div>
 

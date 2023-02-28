@@ -12,6 +12,8 @@ import Birds from "./components/vantajs/Birds"
 import Aos from "aos"
 import 'aos/dist/aos.css'
 
+import { useState } from "react";
+
 function App(){
 
   Aos.init({
@@ -19,22 +21,28 @@ function App(){
     offset:0,
   })
 
+  const [darkMode, setDarkMode] = useState(true);
+
+  const switchModePages = (darkMode) => {
+    setDarkMode(darkMode)
+}
+
   return (
 
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full h-full">
         <div>
-        <Net/>
-        <Welcome/>
+        <Net darkMode={darkMode}/>
+        <Welcome switchModePages={switchModePages}/>
         </div>
 
         <div>
-        <Globe/>
-        <Projetos/>
+        <Globe darkMode={darkMode}/>
+        <Projetos darkMode={darkMode}/>
         </div>
 
-        <div>
-        <Birds/>
-        <Contato/>
+        <div >
+        <Birds darkMode={darkMode}/>
+        <Contato darkMode={darkMode}/>
         </div>
     </div>
 

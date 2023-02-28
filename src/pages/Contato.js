@@ -23,11 +23,32 @@ function Result(condition) {
         console.log("Recaptcha loaded")
     }
 
-function Contato(){
+function Contato(props){
+
+    let recaptchaInstance;
+
+    const [darkMode, setDarkMode] = useState(true)
+    const [theme, setTheme] = useState('dark')
+    const [seed, setSeed] = useState(1);
+    useEffect(() => {
+        setDarkMode(props.darkMode)
+        if(!props.darkMode){
+            setTheme('light')
+        }
+        else{
+            setTheme('dark')
+        }
+    },[props])
+
+    useEffect(() => {
+        // recaptchaInstance.reset()
+        setSeed(Math.random()); 
+        // Forma que utilizei para alternar o tema do Recaptcha, pois o .reset() não estava funcionando
+    },[theme])
 
     const [result, showResult] = useState('')
     const [state, setState] = useState(false)
-
+    
     var verifyCallback = function (response) {
         if(response){
             setState(true)
@@ -50,7 +71,6 @@ function Contato(){
     }
     else {
         showResult('captchaError')
-        console.log("state:",state)
     }
     setTimeout(() => {
         showResult('false')
@@ -72,15 +92,17 @@ function Contato(){
 
 return(
 
-<div className="Contato h-full w-full p-6 lg:p-10" id="contato" name='contato'>
+<div className={`Contato ${darkMode ? "dark" : ""} overflow-y-hidden h-full w-full`} id="contato" name='contato'>
+
+<div className="transition-all ease-in-out duration-[2000ms] p-6 lg:p-10 dark:bg-gray-700 bg-slate-200">
 
     <div className='items-center text-center'>
-    <h1 className='text-center text-purple-300 lg:text-6xl md:text-5xl text-4xl mx-auto' data-aos='fade-down' data-aos-delay='600'>Entre em contato comigo!</h1>
-    <p className='text-center text-purple-100 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto' data-aos='fade-up' data-aos-delay='800'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
+    <h1 className='text-center dark:text-purple-300 dark:saturate-100 text-purple-600 saturate-50 lg:text-6xl md:text-5xl text-4xl mx-auto' data-aos='fade-down' data-aos-delay='600'>Entre em contato comigo!</h1>
+    <p className='text-center dark:text-purple-100 dark:saturate-100 text-purple-400 saturate-50 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto' data-aos='fade-up' data-aos-delay='800'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
     </div>
-    <div className='bg-gray-800 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-95 p-8 z-20 rounded-3xl' data-aos='fade-up' data-aos-delay='900'>
+    <div className='dark:bg-gray-800 bg-slate-500 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-[0.94] z-20 p-8 rounded-3xl overflow-hidden' data-aos='slide-up' data-aos-delay='600'>
         
-    <form className='w-full h-full flex flex-col lg:grid grid-cols-1 lg:grid-cols-2 gap-4 border-blue-500' onSubmit={sendEmail}>
+    <form className='w-full h-full flex flex-col lg:grid grid-cols-1 lg:grid-cols-2 gap-4' onSubmit={sendEmail}>
 
         <div className='lg:row-span-6 '>
         <label className='label'>Nome:</label>
@@ -92,13 +114,15 @@ return(
         <label className='label'>Assunto</label>
         <input className='input' type='text' name="subject" placeholder='Assunto da mensagem' required/>
 
-        <div data-aos='flip-down' data-aos-delay='1200'>
+        <div data-aos='fade-right' data-aos-delay='1400'>
         <Recaptcha
+        key={seed}
         sitekey='6LdP-p8kAAAAAMBJp2hawp3jfjE5nfeVZQ8f7YB8'
         render='explicit'
         verifyCallback={verifyCallback}
         onloadCallback={onloadCallback}
-        theme="dark"
+        ref={e => recaptchaInstance = e}
+        theme={theme}
         hl='pt-PT'
         size='compact'
         />
@@ -106,31 +130,39 @@ return(
 
         </div>
 
-        <div className='lg:col-span-1 lg:row-span-6 '>
+        <div className='lg:col-span-1 lg:row-span-6'>
         <label className='label'>Mensagem</label>
         <textarea className='inputM' name="message" placeholder='Diga-me' value={message} onChange={(e) => setMessage(e.target.value)} required/>
         <div className='flex items-center justify-between gap-2'>
             <p className={`font-bold md:mb-0 mb-5 text-sm ${message.length > 1000 ? 'text-red-700' : 'text-white'}`}>{`${message.length}/1000`}</p>
         </div>
 
-        <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar" data-aos='zoom-in' data-aos-delay='1200'/>
+        <div data-aos='fade-left' data-aos-delay='1400'>
+        <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar"/>
+        </div>
 
         <div className='result'> {result === "send" ? Result('send') : null} </div> 
         <div className='result'> {result === "captchaError" ? Result('captcha') : null} </div> 
 
         </div>
-        <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto' data-aos='zoom-out' data-aos-delay='1200'>
+
+        <div className='w-auto lg:mx-auto' data-aos='fade-up' data-aos-delay='1400'>
+        <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto' >
             <a className='icon' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.linkedin.com/in/alexsandro-urbano-666292237/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384889.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.instagram.com/alexsandro.urbano9/'> <img src='https://cdn-icons-png.flaticon.com/512/408/408707.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.facebook.com/alexsandro.urbano.1/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384879.png' width='40px' height='40px'/></a>
             <a className='icon'> <img src='https://cdn-icons-png.flaticon.com/512/2335/2335279.png' width='40px' height='40px'/><h5 className='hover:text-[1rem] text-[0.8rem] translate-x-[-25px] text-white hover:translate-x-[-35px]'>RedSpyBR#9490</h5></a>
         </div>
+        </div>
+
 
     </form>
     
 
   </div>
+
+</div>
 
 </div>
 
