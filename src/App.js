@@ -3,6 +3,9 @@ import Welcome from "./pages/Welcome"
 import Projetos from "./pages/Projetos"
 import Contato from "./pages/Contato"
 
+// Componentes
+import Footer from "./components/Footer"
+
 // Vanta - Fundo animado
 import Net from "./components/vantajs/Net"
 import Globe from "./components/vantajs/Globe"
@@ -61,6 +64,7 @@ function App(){
         />
         <Contato darkMode={darkMode}/>
         </div>
+        <Footer darkMode={darkMode}/>  
     </div>
 
   );

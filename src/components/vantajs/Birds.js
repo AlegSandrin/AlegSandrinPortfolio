@@ -60,7 +60,7 @@ useEffect(() => {
 }, [vantaEffect])
 
   return (
-    <div className="absolute h-[95%] w-full z-0 opacity-60" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
+    <div className="absolute h-[95%] xl:max-h-[1080px] w-full z-0 opacity-60" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
   );
 
 }

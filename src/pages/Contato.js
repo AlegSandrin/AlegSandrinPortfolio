@@ -102,7 +102,7 @@ return(
     <h1 className='text-center dark:text-purple-300 dark:saturate-100 text-purple-600 saturate-50 lg:text-6xl md:text-5xl text-4xl mx-auto' data-aos='fade-down' data-aos-delay='600'>Entre em contato comigo!</h1>
     <p className='text-center dark:text-purple-100 dark:saturate-100 text-purple-400 saturate-50 lg:text-xl md:text-xl text-xl mb-8 mt-3 mx-auto' data-aos='fade-up' data-aos-delay='800'>Oportunidades de emprego/freelance, sugestões ou perguntas estou a disposição</p>
     </div>
-    <div className='dark:bg-gray-800 bg-slate-500 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-2xl opacity-[0.94] z-20 p-8 rounded-3xl overflow-hidden' data-aos='slide-up' data-aos-delay='600'>
+    <div className='dark:bg-gray-800 bg-slate-500 h-[85%] w-[98%] lg:h-[700px] lg:w-[900px] mx-auto shadow-xl opacity-[0.94] z-20 p-8 rounded-3xl overflow-hidden' data-aos='fade-up' data-aos-delay='600'>
         
     <form className='w-full h-full flex flex-col lg:grid grid-cols-1 lg:grid-cols-2 gap-4' onSubmit={sendEmail}>
 
@@ -116,7 +116,7 @@ return(
         <label className='label'>Assunto</label>
         <input className='input' type='text' name="subject" placeholder='Assunto da mensagem' required/>
 
-        <div data-aos='fade-right' data-aos-delay='1400'>
+        <div data-aos='fade-right' data-aos-delay='1000'>
         <Recaptcha
         sitekey='6LdP-p8kAAAAAMBJp2hawp3jfjE5nfeVZQ8f7YB8'
         render='explicit'
@@ -139,7 +139,7 @@ return(
             <p className={`font-bold md:mb-0 mb-5 text-sm ${message.length > 1000 ? 'text-red-700' : 'text-white'}`}>{`${message.length}/1000`}</p>
         </div>
 
-        <div data-aos='fade-left' data-aos-delay='1400'>
+        <div data-aos='fade-left' data-aos-delay='1000'>
         <input disabled={isDisabled} className={`button col-span-2 ${isDisabled ? 'saturate-0' : 'saturate-100'}`} type="submit" value="Enviar"/>
         </div>
 
@@ -148,7 +148,7 @@ return(
 
         </div>
 
-        <div className='w-auto lg:mx-auto' data-aos='fade-up' data-aos-delay='1400'>
+        <div className='w-auto lg:mx-auto' data-aos='fade-up' data-aos-delay='1000'>
         <div className='md:col-span-2 md:flex grid grid-cols-3 h-[50px] lg:-mb-8 -translate-y-14 md:translate-y-0 lg:-translate-y-5 sm:gap-5 gap-2 md:w-auto sm:w-[50%] w-[35%] md:gap-10 float-left lg:mx-auto' >
             <a className='icon' href='https://github.com/AlegSandrin'> <img src='https://cdn-icons-png.flaticon.com/512/1322/1322053.png' width='40px' height='40px'/> </a>
             <a className='icon' href='https://www.linkedin.com/in/alexsandro-urbano-666292237/'> <img src='https://cdn-icons-png.flaticon.com/512/1384/1384889.png' width='40px' height='40px'/> </a>
