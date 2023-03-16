@@ -73,7 +73,7 @@ function Welcome({switchModePages, toggleVantajs}) {
 
     <div className='transition-colors ease-in-out duration-[2000ms] dark:bg-gray-700 bg-slate-200 '>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='sobremim' name='sobremim'>
+      <div className="grid grid-cols-1 lg:grid-cols-2 z-20" id='Sobremim' name='Sobremim'>
             <div className="dark:bg-gray-900 bg-slate-600 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 opacity-90 lg:rounded-r-[90%] lg:border-r-[15px] dark:border-gray-800 border-slate-500 z-20" data-aos={`${mobile() ? 'fade-down' : 'fade-right'}`} data-aos-delay='400'>
 
                 <div className="flex-grow" data-aos={`${mobile() ? 'fade-down' : 'fade-up'}`} data-aos-delay="600" data-aos-anchor-placement="top-center">
@@ -85,12 +85,12 @@ function Welcome({switchModePages, toggleVantajs}) {
 
                     <div className='flex place-items-center col-span-2 dark:text-white dark:bg-gray-800 bg-slate-500 text-gray-900 rounded-full shadow-xl sm:text-lg text-xs mx-auto sm:w-[300px] w-[220px] p-1 lg:p-2'>
                     
-                    <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
+                    <Link activeClass="active" className="ml-auto font-bold cursor-pointer" to="Sobremim" spy={true} smooth={true} duration={500}>Sobre mim</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
 
-                    <Link activeClass="active" className="cursor-pointer" to="projetos " spy={true} smooth={true} duration={500}>Projetos</Link>
+                    <Link activeClass="active" className="cursor-pointer" to="Projetos" spy={true} smooth={true} duration={500}>Projetos</Link>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>

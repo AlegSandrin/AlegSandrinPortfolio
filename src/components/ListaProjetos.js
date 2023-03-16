@@ -6,6 +6,7 @@ import ICA from "../assets/img/projetos/ionic-cep-api.png"
 import IT from "../assets/img/projetos/ionic-triangulo.png"
 import DGV from "../assets/img/projetos/datagridview.png"
 import PMD from "../assets/img/projetos/php-mysql-dashboard.png"
+import FC from "../assets/img/projetos/FireChat.png"
 
 var ionic = "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg"
 var angular =  "https://angular.io/assets/images/logos/angular/angular.svg"
@@ -16,8 +17,16 @@ var js = "https://raw.githubusercontent.com/devicons/devicon/master/icons/javasc
 var php = "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
 var react = "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
 var csharp = "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg"
+var tailwind = "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
 
 const projetos = [
+    {
+    preview: FC,
+    titulo: "FireChat",
+    descricao: "Aplicação Web de conversa entre usuários com chat público (geral) e privado (entre usuários específicos)",
+    link: "https://fire-chat-eight.vercel.app/",
+    linguagens: [react, js, firebase, tailwind],
+    },
     {
     preview: HC,
     titulo: "Healthy Care",

@@ -33,10 +33,10 @@ function Projetos(props){
                                 {projeto.descricao}
                                 </h1>
                     
-                                <a href={projeto.download} className="flex sm:m-2 sm:mt-auto mt-8 icon dark:text-indigo-100 text-slate-700 hover:text-indigo-800 xl:h-[35px] xl:w-[35px] md:h-[30px] md:w-[30px] sm:w-[25px] sm:h-[25px] h-[20px] w-[20px]">
+                                { projeto.download && <a href={projeto.download} className="flex sm:m-2 sm:mt-auto mt-8 icon dark:text-indigo-100 text-slate-700 hover:text-indigo-800 xl:h-[35px] xl:w-[35px] md:h-[30px] md:w-[30px] sm:w-[25px] sm:h-[25px] h-[20px] w-[20px]">
                                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=""><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                                </a>
-                                <div className='flex gap-1 sm:gap-2 m-2 my-auto place-content-end col-span-3'>
+                                </a> }
+                                <div className={`flex gap-1 sm:gap-2 m-2 my-auto place-content-end ${projeto.download ? 'col-span-3' : 'col-span-full'}`}>
                                     {projeto.linguagens.map((linguagem, index) => (
                                     <img key={index} src={linguagem} className='xl:h-[35px] xl:w-[35px] md:h-[30px] md:w-[30px] sm:w-[25px] sm:h-[25px] h-[20px] w-[20px]'/>
                                     ))}
