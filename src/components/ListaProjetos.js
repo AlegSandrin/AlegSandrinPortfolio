@@ -18,6 +18,8 @@ var php = "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/p
 var react = "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
 var csharp = "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg"
 var tailwind = "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+var tauri = "https://img.gs/czjpqfbdkz/full/https://github.com/tauri-apps/tauri/raw/dev/app-icon.png"
+var androidstudio = "https://1.bp.blogspot.com/-LgTa-xDiknI/X4EflN56boI/AAAAAAAAPuk/24YyKnqiGkwRS9-_9suPKkfsAwO4wHYEgCLcBGAsYHQ/s0/image9.png"
 
 const projetos = [
     {
@@ -25,14 +27,15 @@ const projetos = [
     titulo: "FireChat",
     descricao: "Aplicação Web de conversa entre usuários com chat público (geral) e privado (entre usuários específicos)",
     link: "https://fire-chat-eight.vercel.app/",
-    linguagens: [react, js, firebase, tailwind],
+    linguagens: [react, js, firebase, tailwind, tauri],
+    download: 'https://drive.google.com/file/d/141WcQ8Y4v36vtBOZhys0BBp2_YyS2vaq/view?usp=share_link',
     },
     {
     preview: HC,
     titulo: "Healthy Care",
     descricao: "App com objetivo de trazer ao usuário informações e dicas sobre sua própria saúde",
     link: "https://healthy-care-mu.vercel.app/home",
-    linguagens: [ionic,angular,ts,firebase],
+    linguagens: [ionic,angular,ts,firebase,androidstudio],
     download: 'https://drive.google.com/file/d/1QyRgN9JKd4DOXMi204lK8FIoeO3bizp5/view?usp=sharing',
     },
     {
@@ -40,7 +43,7 @@ const projetos = [
     titulo: "Evento Paulo Freire",
     descricao: "App sobre um evento ficticio com cadastro vínculado ao banco de dados Firebase. Projeto desenvolvido para Semana Paulo Freire.",
     link: "https://app-cadastro-evento-pf.vercel.app/loading",
-    linguagens: [ionic,angular,ts,firebase],
+    linguagens: [ionic,angular,ts,firebase,androidstudio],
     download: "https://drive.google.com/file/d/16_EZyi95dQYTL2R0OIwItBGIB_o53PFJ/view?usp=sharing"
     },
     {
@@ -48,7 +51,7 @@ const projetos = [
     titulo: "Ionic CEP API",
     descricao: "App que faz request a uma API atraves de um CEP fornecido pelo usuário e é retornado dados sobre esse local. Projeto desenvolvido para uma tarefa de Programação Mobile.",
     link: "https://ionic-cep-search.vercel.app/home",
-    linguagens: [ionic,angular,ts],
+    linguagens: [ionic,angular,ts,androidstudio],
     download: "https://drive.google.com/file/d/1Hffop24ClIGW_RveBJ6MT1uUhC0eT1L6/view?usp=sharing"
     },
     {
