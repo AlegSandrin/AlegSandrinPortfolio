@@ -132,16 +132,18 @@ function Welcome({switchModePages, toggleVantajs}) {
                     <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic" width="40" height="40" className='h-full icon'/> </a> 
                     <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40" className='h-full icon'/></a>
                     <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40" className='h-full icon'/> </a>  
                     <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40" className='h-full icon'/> </a>
                     <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://styles.redditmedia.com/t5_2qm6k/styles/communityIcon_dhjr6guc03x51.png" className="rounded-full icon" alt="mysql" width="40" height="40" /> </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" className='h-full icon'/> </a> 
                     <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40" className='h-full icon'/> </a>
                 </div>
                 <h2 className='text-left dark:text-blue-100 lSubTitle text-2xl sm:text-2xl mt-3'>Aprendendo:</h2>
                 <div className='flex flex-row gap-4 mt-2'>
                     <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" className='h-full icon'/> </a> 
-                    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40" className='h-full icon'/> </a>  
                     <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" alt="nodejs" width="40" height="40" className='h-full icon'/> </a> 
+                    <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://i.ytimg.com/an/K_m2976Yvbx-TyDLw7n1WA/featured_channel.jpg?v=6176c4d2" alt="mongodb" width="40" height="40" className='h-full icon'/> </a>
+                    <a href="https://www.solidjs.com" target="_blank" rel="noreferrer"> <img src="https://www.solidjs.com/assets/logo-123b04bc.svg" alt="solidjs" width="40" height="40" className='h-full icon'/> </a>  
                 </div>
 
             </div>
