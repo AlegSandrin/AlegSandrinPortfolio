@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'
+/* eslint-disable react/prop-types */
+import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'vanta/vendor/three.r134.min'
 import GLOBE from 'vanta/dist/vanta.globe.min'
 
@@ -9,7 +10,7 @@ const [color2, setColor2] = useState(0xa09fd2)
 
 useEffect(() => {
   if(!props.vantajs){
-    vantaEffect.destroy()
+    vantaEffect?.destroy()
   }
   else{
     setVantaEffect(null)
@@ -32,7 +33,7 @@ const [vantaEffect, setVantaEffect] = useState(null)
 const myRef = useRef(null)
 
 useEffect(() => {
-  if (!vantaEffect){
+  if (!vantaEffect && props.vantajs){
     setVantaEffect(
       GLOBE({
         el: myRef.current,
@@ -51,13 +52,15 @@ useEffect(() => {
     )
   }
   return () => {
-    if (vantaEffect) vantaEffect.destroy()
+    if (vantaEffect) vantaEffect?.destroy()
   }
-}, [vantaEffect])
+}, [vantaEffect, props.vantajs])
 
   return (
+    <>
+      <div className="absolute h-full w-full z-0 opacity-60" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
+    </>
     
-    <div className="absolute h-full w-full z-0 opacity-60" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
     
   );
 

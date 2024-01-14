@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react'
+/* eslint-disable react/prop-types */
+import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'vanta/vendor/three.r134.min'
-import BIRDS from 'vanta/dist/vanta.birds.min'
+import NET from 'vanta/dist/vanta.net.min'
 
-export default function Birds(props) {
+export default function Net(props) {
 
 const [color, setColor] = useState(0xffffff)
-const [color2, setColor2] = useState(0xa09fd2)
 
 useEffect(() => {
   if(!props.vantajs){
-    vantaEffect.destroy()
+    vantaEffect?.destroy()
   }
   else{
     setVantaEffect(null)
@@ -18,12 +18,10 @@ useEffect(() => {
 
 useEffect(() => {
   if(!props.darkMode){
-    setColor(0x0)
-    setColor2(0x3d39af)
+    setColor(0x110d34)
   }
   else{
     setColor(0xffffff)
-    setColor2(0xa09fd2)
   }
   props.vantajs && setVantaEffect(null)
 },[props.darkMode])
@@ -32,9 +30,9 @@ const [vantaEffect, setVantaEffect] = useState(null)
 const myRef = useRef(null)
 
 useEffect(() => {
-  if (!vantaEffect){
+  if (!vantaEffect && props.vantajs) {
     setVantaEffect(
-      BIRDS({
+      NET({
         el: myRef.current,
         backgroundAlpha: 0,
         mouseControls: true,
@@ -43,24 +41,24 @@ useEffect(() => {
         minHeight: 200.00,
         minWidth: 200.00,
         scale: 1.00,
+        maxDistance: 15.00,
         scaleMobile: 1.00,
-        color1: color,
-        color2: color2,
-        colorMode: "lerp",
-        birdSize: 0.80,
-        separation: 98.00,
-        quantity: 3.00,
+        color: color,
         THREE: THREE,
       })
     )
   }
   return () => {
-    if (vantaEffect) vantaEffect.destroy()
+    if (vantaEffect) vantaEffect?.destroy()
   }
-}, [vantaEffect])
+}, [vantaEffect, props.vantajs])
 
   return (
-    <div className="absolute h-[95%] xl:max-h-[1080px] w-full z-0 opacity-60" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
+    <>
+      <div className="h-full w-full absolute z-20 opacity-40" ref={myRef} data-aos='fade-zoom-in' data-aos-delay='1800'></div>
+    </>
+    
+    
   );
 
 }

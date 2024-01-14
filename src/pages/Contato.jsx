@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import Recaptcha from 'react-recaptcha';
 
@@ -7,13 +9,21 @@ function Result(condition) {
 
     if(condition === "captcha"){
         return (
-            <div className='flex absolute right-[60px] translate-y-[85px] sm:translate-y-[70px] md:translate-y-0 md:right-auto col-span-2 bg-red-700 text-white text-[0.8rem] p-2 rounded-md'>Complete a verificação para continuar<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg>
+            <div className='flex absolute right-[60px] translate-y-[85px] sm:translate-y-[70px] md:translate-y-0 md:right-auto col-span-2 bg-red-700 text-white text-[0.8rem] p-2 rounded-md'>
+                Complete a verificação para continuar
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
             </div>
         )
     }
     else{
     return (
-        <div className='flex absolute right-[60px] translate-y-[85px] sm:translate-y-[70px] md:translate-y-0 md:right-auto col-span-2 bg-lime-700 text-white p-2 rounded-md'>Mensagem enviada <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        <div className='flex absolute right-[60px] translate-y-[85px] sm:translate-y-[70px] md:translate-y-0 md:right-auto col-span-2 bg-lime-700 text-white p-2 rounded-md'>
+            Mensagem enviada 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
         </div>
     )
 }
@@ -40,7 +50,8 @@ function Contato(props){
         }
     },[props])
 
-    let recaptchaInstance;
+    const [ recaptchaInstance, setRecaptchaInstance ] = useState();
+
     useEffect(() => {
         if(callback){
         // recaptchaInstance.reset()
@@ -63,10 +74,8 @@ function Contato(props){
         
         if(state){
             emailjs.sendForm('service_j8pnd9j', 'template_cwogk6l', e.target, 'IrFDu6Unz77ioGs15')
-            .then((result) => {
-                // console.log(result.text);
-            }, (error) => {
-                // console.log(error.text);
+            .catch((error) => {
+                console.error(error.text);
             })
             e.target.reset();
             showResult('send')
@@ -122,7 +131,7 @@ return(
         render='explicit'
         verifyCallback={verifyCallback}
         onloadCallback={onloadCallback}
-        ref={e => recaptchaInstance = e}
+        ref={e => setRecaptchaInstance(e)}
         theme={theme}
         hl='pt-PT'
         size='compact'

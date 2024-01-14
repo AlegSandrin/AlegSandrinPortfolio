@@ -1,4 +1,5 @@
-import {FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaDiscord} from 'react-icons/fa'
+/* eslint-disable react/prop-types */
+import {FaFacebook, FaInstagram, FaLinkedin, FaGithub} from 'react-icons/fa'
 import profilePic from "../assets/img/profile.png"
 import { useState, useEffect } from "react";
 
