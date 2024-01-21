@@ -6,8 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alexsandro Urbano | Portfolio</title>
   </head>
-  <body>
+  <body onload="title()">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  
+    <script>
+      function title() {
+        let config = {
+        strings: ["Alegsandrin", "Alexsandro Urbano"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1500,
+          }
+
+        let typed = new Typed("#titulo", config);
+
+        const bemvindo = document.getElementById("bemvindo").onmouseover = event => {
+          welcome()
+        }
+
+        welcome()
+      }
+
+      function welcome(){
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        let interval = null;
+
+        const bemvindo = document.getElementById("bemvindo")
+        let iteration = 0;
+
+        clearInterval(interval);
+
+        interval = setInterval(() => {
+
+        bemvindo.innerHTML = bemvindo.innerHTML
+          .split("")
+          .map((letter, index) => {
+            if(index < iteration) {
+              return bemvindo.dataset.value[index];
+            }
+          
+            return letters[Math.floor(Math.random() * 26)]
+          })
+          .join("");
+
+        if(iteration >= bemvindo.dataset.value.length){ 
+          clearInterval(interval);
+        }
+
+        iteration += 1 / 3;
+        }, 50 );
+
+      }
+
+    </script>
+
   </body>
 </html>

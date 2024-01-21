@@ -4,7 +4,6 @@ import profile from '../assets/img/profile.jpg'
 import { Link } from "react-scroll";
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 import { AiOutlineCloseCircle, AiOutlineCheckCircle } from 'react-icons/ai'
-import { useEffect } from 'react';
 import Icon from '../components/Icon';
 
 
@@ -39,11 +38,6 @@ function Welcome({pageConfig, switchModePages: setDarkMode, toggleVantajs: setVa
 
     const { darkMode, vantajs } = pageConfig;
 
-    useEffect(() => {
-      console.log('darkMode', darkMode)
-      console.log('vantajs', vantajs)
-    },[darkMode, vantajs])
-
     function switchMode(){
       if(darkMode) {
           return (
@@ -64,17 +58,17 @@ function Welcome({pageConfig, switchModePages: setDarkMode, toggleVantajs: setVa
 
       function toggleVantaButton(){
       if(vantajs){
-       return(
+       return (
           <div onClick={() => setVantajs(!vantajs)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
-          Fundo 3D
-          <AiOutlineCheckCircle className='switchButton ml-2 sm:text-2xl text-xs text-green-600' data-aos="flip-left"/>
+            Fundo 3D
+            <AiOutlineCheckCircle className='switchButton ml-2 sm:text-2xl text-xs text-green-600' data-aos="flip-left"/>
           </div>
        )
       } else {
-       return(
+       return (
           <div onClick={() => setVantajs(!vantajs)} className='flex cursor-pointer dark:bg-gray-800 bg-slate-500 dark:text-white text-gray-900 rounded-full shadow-xl sm:text-base text-xs w-full justify-center p-[0.4rem]'>
-          Fundo 3D
-          <AiOutlineCloseCircle className='switchButton ml-2 sm:text-2xl text-xs text-red-600' data-aos="flip-left"/>
+            Fundo 3D
+            <AiOutlineCloseCircle className='switchButton ml-2 sm:text-2xl text-xs text-red-600' data-aos="flip-left"/>
           </div>
           )
          }
@@ -130,7 +124,7 @@ function Welcome({pageConfig, switchModePages: setDarkMode, toggleVantajs: setVa
             <div className="my-auto dark:bg-gray-600 bg-slate-400 drop-shadow-xl rounded-md p-8 pl-4 pr-4" data-aos={`${mobile() ? 'fade-up' : 'fade-left'}`} data-aos-delay='1000'>
 
                 <div className='name flex my-2 text-center dark:text-white text-slate-800 xl:text-[4.5rem] lg:text-[3.4rem] sm:text-[4.9rem] text-[2.5rem] transition duration-150 dark:hover:text-green-500 hover:text-rose-700'>
-                <h5 id='titulo'></h5>
+                    <h5 id='titulo'></h5>
                 </div>
 
                 <h1 className='text-left dark:text-blue-100 lSubTitle text-2xl sm:text-3xl md:text-4xl'>Um pouco sobre mim</h1>
